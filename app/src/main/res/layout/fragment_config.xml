@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="12dp">
+
+        <!-- 계량기 정보 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp"
+            android:layout_marginBottom="10dp" android:background="@drawable/bg_card">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📟 계량기 정보" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/accent" android:layout_marginBottom="12dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                    android:text="기물번호" android:textSize="12sp" android:textColor="@color/muted"/>
+                <EditText android:id="@+id/etMeterNo" android:layout_width="0dp"
+                    android:layout_height="44dp" android:layout_weight="1"
+                    android:text="21-000006" android:textColor="@color/text_color"
+                    android:textSize="14sp" android:fontFamily="monospace"
+                    android:background="@drawable/bg_card" android:padding="10dp"
+                    android:inputType="text"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                    android:text="검침값(㎥)" android:textSize="12sp" android:textColor="@color/muted"/>
+                <EditText android:id="@+id/etReading" android:layout_width="0dp"
+                    android:layout_height="44dp" android:layout_weight="1"
+                    android:text="556.950" android:textColor="@color/text_color"
+                    android:textSize="14sp" android:fontFamily="monospace"
+                    android:background="@drawable/bg_card" android:padding="10dp"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                    android:text="구경(mm)" android:textSize="12sp" android:textColor="@color/muted"/>
+                <Spinner android:id="@+id/spinDiam" android:layout_width="0dp"
+                    android:layout_height="44dp" android:layout_weight="1"
+                    android:background="@drawable/bg_card" android:paddingStart="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="10dp">
+                <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                    android:text="소수점" android:textSize="12sp" android:textColor="@color/muted"/>
+                <Spinner android:id="@+id/spinDec" android:layout_width="120dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_card" android:paddingStart="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="자리" android:textSize="12sp" android:textColor="@color/muted"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                    android:text="주소" android:textSize="12sp" android:textColor="@color/muted"/>
+                <EditText android:id="@+id/etAddr" android:layout_width="80dp"
+                    android:layout_height="44dp" android:text="1"
+                    android:textColor="@color/text_color" android:textSize="14sp"
+                    android:fontFamily="monospace" android:background="@drawable/bg_card"
+                    android:padding="10dp" android:inputType="number" android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 경보 설정 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp"
+            android:layout_marginBottom="10dp" android:background="@drawable/bg_card">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="⚠ 경보 설정" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/accent" android:layout_marginBottom="10dp"/>
+            <CheckBox android:id="@+id/chkQ3" android:layout_width="match_parent"
+                android:layout_height="44dp" android:text="Q3 초과 (최대유량)"
+                android:textColor="@color/red" android:buttonTint="@color/red"
+                android:textSize="14sp" android:layout_marginBottom="4dp"/>
+            <CheckBox android:id="@+id/chkRev" android:layout_width="match_parent"
+                android:layout_height="44dp" android:text="역류 (1분 이상)"
+                android:textColor="@color/yellow" android:buttonTint="@color/yellow"
+                android:textSize="14sp" android:layout_marginBottom="4dp"/>
+            <CheckBox android:id="@+id/chkLeak" android:layout_width="match_parent"
+                android:layout_height="44dp" android:text="옥내 누수 (7일)"
+                android:textColor="@color/accent" android:buttonTint="@color/accent"
+                android:textSize="14sp" android:layout_marginBottom="4dp"/>
+            <CheckBox android:id="@+id/chkBatt" android:layout_width="match_parent"
+                android:layout_height="44dp" android:text="배터리 부족"
+                android:textColor="@color/yellow" android:buttonTint="@color/yellow"
+                android:textSize="14sp" android:layout_marginBottom="10dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnAlarmOff" android:layout_width="0dp"
+                    android:layout_height="40dp" android:layout_weight="1"
+                    android:text="전체 OFF" android:textColor="@color/text_color"
+                    android:backgroundTint="@color/panel" android:layout_marginEnd="6dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                <Button android:id="@+id/btnAlarmOn" android:layout_width="0dp"
+                    android:layout_height="40dp" android:layout_weight="1"
+                    android:text="전체 ON" android:textColor="@color/white"
+                    android:backgroundTint="#7C3AED"
+                    style="@style/Widget.MaterialComponents.Button"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- USB 연결 -->
+        <Button android:id="@+id/btnConnect" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="USB 시리얼 연결"
+            android:textSize="15sp" android:textStyle="bold"
+            android:textColor="@color/white" android:backgroundTint="@color/accent2"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+        <Button android:id="@+id/btnApply" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="설정 적용 및 프레임 갱신"
+            android:textSize="14sp" android:textColor="@color/text_color"
+            android:backgroundTint="@color/panel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
+</ScrollView>
