@@ -102,7 +102,7 @@ public class MeterProtocol {
             int c = buf[i+1] & 0xFF;
             int a = buf[i+2] & 0xFF;
             int k = buf[i+3] & 0xFF;
-            if ((c+a) & 0xFF != k) continue;
+            if (((c+a) & 0xFF) != k) continue;
             if (c != C_REQ_UD2_A && c != C_REQ_UD2_B) continue;
             return i; // 시작 위치 반환
         }
